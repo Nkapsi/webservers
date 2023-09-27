@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <center>
     <head>
+        <center>
         <h1><FONT COLOR=red>YOU WON!!</FONT></h1>
         <h2><FONT COLOR=red>CONGRATS!</FONT></h2>
     </head>
@@ -22,8 +22,9 @@
                 <div>   <!--Text card details-->
                     <FONT COLOR=#ff03d1>
                         <label for="ccn">Credit Card Number:</label><input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
-                        <br/>
-                        NAME: <input type="text" id="name" name="name"/>
+                        <br/><br/>
+                        NAME: <input type="text" id="name" onblur="document.getElementById('blank').innerHTML= 'This field is required!'"/> <br/>
+                        <span id="blank"></span><br/>
                         <br/>
                         CVV CODE: <input class="required" id="field" type="number" max="999" pattern="([0-9]|[0-9]|[0-9])" name="cvv" placeholder="xxx"/>
                         <br/><br/>
@@ -35,7 +36,7 @@
                     <label for="Countries">Select country:</label>
                     <select id="Countries" name="Countries">
                     <option value="United States">United States</option>
-                    <option valie="Canada">Canada</option>
+                    <option value="Canada">Canada</option>
                     </select>
                     <br/><br>
                 </div>
@@ -52,6 +53,7 @@
         </div>
         <br/>
         <img src="jackpot.jpg" alt="Jackpot" width="400" height="300">
+        <br/>
 
     </center>
     </body>
