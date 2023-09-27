@@ -4,7 +4,7 @@
         <head>
         <script>
             function time() {
-                alert('ALERT')
+                document.getElementById("para").innerHTML = "New text appeared, wow!";
             }
 
         </script>
@@ -18,6 +18,9 @@
     <body style="background-image: url('backg.jpg');">
             <p><FONT COLOR=#f6ff00>Welcome to the home page, more to come...</FONT></p>
             <img src="loading.gif" alt="Loading" width="45" height="45">
+            <br/><br/>
+            <p id="para">Keep an eye on this text....</p>
+
     </center>
         <div>
            <p>Here's what this page includes: </p>
@@ -34,8 +37,8 @@
         <center>
             <a href="winner.html" target="_blank"> Click this link! </a>
             <br/><br/>
-            <button onclick="time()">Press for alert</button>
-    
+            <button onclick="alert('ALERT')">Press for alert</button>
+            <button onclick="time()">Press here for the time</button>
         </center>
     </body> 
 </html>
