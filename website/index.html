@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-        <head>
+    <head>
         <script>
             function modify() {
                 document.getElementById("para").innerHTML = "New text appeared, wow!";
@@ -23,14 +23,23 @@
             function txtchange(elem)   {
                 elem.innerHTML="It works!";
             }
-
+            function loadtext(url, xfunction)  {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {xfunction(this);}
+                xhttp.open("GET", url);
+                xhttp.send();
+            }
+            function loadtext2(xhttp) {
+                document.getElementById("changebyajax").innerHTML = xhttp.responsetext;
+            }
         </script>
-    <center>
+        
+        <center>
             <h1><FONT COLOR=BLACK>HOMEPAGE</FONT></h1>
             <br/>
             <h2><FONT COLOR=#0e77c9>By: Nick K</FONT></h2>
             <br/><br/>
-        </head>
+    </head>
 
     <body style="background-image: url('backg.jpg');">
             <p><FONT COLOR=#f6ff00>Welcome to the home page, more to come...</FONT></p>
@@ -40,7 +49,7 @@
             <br/>
             <p id="hide">This text may dissapear..</p>
 
-    </center>
+        </center>
         <div>
            <p>Here's what this page includes: </p>
            <ul>
@@ -52,7 +61,6 @@
                <li>Link to other site</li>
            </ul>
        </div>
-       
         <center>
             <a href="winner.html" target="_blank"> Click this link! </a>
             <br/><br/>
@@ -62,7 +70,12 @@
             <button onmouseenter="img2()" onmouseleave="img1()">Hover over me to break something</button>
             <br/>
             <button onclick="txtchange(this)">click here to change this text</button>
-
+            <br/><br/>
+            
+            <div id="changebyajax">
+                <p>This text will change if AJAX is working as it should</p>
+                <button type="button" onclick="loadtext('ajaxtext.txt', loadtext2)">Click to request a txt file</button>
+            </div>
         </center>
     </body> 
 </html>
