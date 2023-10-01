@@ -23,17 +23,16 @@
             function txtchange(elem)   {
                 elem.innerHTML="It works!";
             }
-            function loadtext(url, xfunction)  {
+            function loadtxt()  {
                 const xhttp = new XMLHttpRequest();
-                xhttp.onload = function() {xfunction(this);}
-                xhttp.open("GET", url);
+                xhttp.onload = function() {
+                    document.getElementById("changebyajax").innerHTML = 
+                    this.responseText;
+                }
+                xhttp.open("GET", "ajaxtext.txt");
                 xhttp.send();
             }
-            function loadtext2(xhttp) {
-                document.getElementById("changebyajax").innerHTML = xhttp.responsetext;
-            }
         </script>
-        
         <center>
             <h1><FONT COLOR=BLACK>HOMEPAGE</FONT></h1>
             <br/>
@@ -74,8 +73,9 @@
             
             <div id="changebyajax">
                 <p>This text will change if AJAX is working as it should</p>
-                <button type="button" onclick="loadtext('./ajaxtext.txt', loadtext2)">Click to request a txt file</button>
+                <button type="button" onclick="loadtxt()">Click to request a txt file</button>
             </div>
+
         </center>
     </body> 
 </html>
