@@ -64,5 +64,11 @@
             <button onclick="txtchange(this)">click here to change this text</button>
 
         </center>
+        
+        <div>
+            <br/><br/>
+            <h1>Lab 5 section:</h1>
+            <p><?= var_dump($_SERVER) ?></p>
+        </div>
     </body> 
 </html>
