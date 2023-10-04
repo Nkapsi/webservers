@@ -78,7 +78,7 @@
         </center>
             <div>
                 <h2>Lab 5 PHP section:</h2>
-                <p><?= $_SERVER['REQUEST_METHOD'] ?></p>
+                <p><?= $_SERVER['HTTP_USER_AGENT'] ?></p>
             </div>
     </body> 
 </html>
