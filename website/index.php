@@ -67,7 +67,7 @@
         
         <div>
             <br/><br/>
-            <h1>Lab 5 section:</h1>
+            <h2>Lab 5 PHP:</h2>
             <p><?= var_dump($_SERVER) ?></p>
         </div>
     </body> 
