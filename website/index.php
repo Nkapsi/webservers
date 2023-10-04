@@ -75,7 +75,13 @@
                 <p>This text will change if AJAX is working as it should</p>
                 <button type="button" onclick="loadtxt()">Click to request a txt file</button>
             </div>
-
         </center>
+            <div>
+                <h2>Lab 5 PHP section:</h2>
+                <p><?= var_dump($_SERVER) ?></p>
+            </div>
+
+
+
     </body> 
 </html>
