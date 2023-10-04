@@ -47,7 +47,6 @@
             <p id="para">Keep an eye on this text</p>
             <br/>
             <p id="hide">This text may dissapear..</p>
-
         </center>
         <div>
            <p>Here's what this page includes: </p>
