@@ -78,10 +78,7 @@
         </center>
             <div>
                 <h2>Lab 5 PHP section:</h2>
-                <p><?= var_dump($_SERVER) ?></p>
+                <p><?= $_SERVER['REQUEST_METHOD'] ?></p>
             </div>
-
-
-
     </body> 
 </html>
