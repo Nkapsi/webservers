@@ -42,7 +42,7 @@
 		</center>
 	</head>
 
-	<body style="background-image: url('backg.jpg');">
+	<body style="background-image: url('76YS.gif');">
 		<center>
 			<p><font color="#f6ff00">Welcome to the home page, more to come...</font></p>
 			<img id="loading1" src="loading.gif" alt="Loading" width="45" height="45" />
