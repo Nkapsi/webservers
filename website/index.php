@@ -82,8 +82,40 @@
 			</div>
 		</center>
 		<div>
-			<h2>Lab 5 PHP section:</h2>
+			<h2>What is my user agent string?</h2>
 			<p><?= $_SERVER['HTTP_USER_AGENT'] ?></p>
+			<h2>___________________________________________________________________</h2>
+		</div>
+		<div>
+			<h2>Order Lookup:</h2>
+			<?php
+				$server = "localhost";
+				$username = "php";
+				$password = "password";
+				$database = "orders";
+				$conn = mysqli_connect($server, $username, $password, $database);
+			
+				$sql = "select * from orders;";
+				$result = mysqli_query($conn, $sql);
+			?>
+			<form action="sqlresponse.php" method="get">
+				<label for="order_number">Select an order number:</label><br/>
+				<select id="order_number" name="order_number">
+					<?php
+						foreach ($result as $row)
+						{
+							echo "<option value='{$row['id']}'> {$row['order_number']}</option>\n";
+						}
+						mysqli_close($conn);
+					?>
+				</select>
+				<br/><br/>
+				<input type="submit" value="submit"/>
+			</form>
+		</div>
+		<div>
+			<h2>Order Modification:</h2>
+			
 		</div>
 	</body>
 </html>
