@@ -99,7 +99,7 @@
 				$result = mysqli_query($conn, $sql);
 			?>
 			<form action="sqlresponse.php" method="get">
-				<label for="order_number">Select an order number:</label><br/>
+				<label for="order_number">Select an order number:</label>
 				<select id="order_number" name="order_number">
 					<?php
 						foreach ($result as $row)
@@ -109,13 +109,31 @@
 						mysqli_close($conn);
 					?>
 				</select>
-				<br/><br/>
 				<input type="submit" value="submit"/>
 			</form>
+			<br/>
 		</div>
 		<div>
-			<h2>Order Modification:</h2>
+			<h2>Add an order:</h2>
+			<?php
+				$server = "localhost";
+				$username = "php";
+				$password = "password";
+				$database = "orders";
+				$conn = mysqli_connect($server, $username, $password, $database);
 			
+				$sql = "select * from orders;";
+				$result = mysqli_query($conn, $sql);
+			?>
+			<form action="sqlresponse.php" method="get">
+				<label for="order_number"></label>
+				Order #: <input class="required" id="enterorder" type="number" pattern="([0-9]|[0-9]|[0-9][0-9][0-9][0-9])" name="enterorder" placeholder="xxxxxx" />
+				<label for="customername"></label>
+				Customer: <input class="required" id="customername" type="text" name="customername"/>
+				<label for="enterdate"></label>
+				Date: <input class="required" id="enterdate" type="text" name="enterdate" placeholder="xx/xx/xx"/>
+				<input type="submit" value="submit"/>
+			</form><br/>
 		</div>
 	</body>
 </html>
