@@ -115,17 +115,7 @@
 		</div>
 		<div>
 			<h2>Add an order:</h2>
-			<?php
-				$server = "localhost";
-				$username = "php";
-				$password = "password";
-				$database = "orders";
-				$conn = mysqli_connect($server, $username, $password, $database);
-			
-				$sql = "select * from orders;";
-				$result = mysqli_query($conn, $sql);
-			?>
-			<form action="sqlresponse.php" method="get">
+			<form action="sqlresponse2.php" method="get">
 				<label for="order_number"></label>
 				Order #: <input class="required" id="enterorder" type="number" pattern="([0-9]|[0-9]|[0-9][0-9][0-9][0-9])" name="enterorder" placeholder="xxxxxx" />
 				<label for="customername"></label>

@@ -4,12 +4,15 @@
       <title>Response for SQL database</title>
       <?php
         $order_number = (int)($_GET["order_number"]); 
+        $customer_name = htmlspecialchars($_GET["customername"]);
+        $order_date = htmlspecialchars($_GET["enterdate"]);
+
         $server = "localhost";
         $username = "php";
         $password = "password";
         $database = "orders";
         $conn = mysqli_connect($server, $username, $password, $database);
-        $sql = "select order_number, customer_name, order_date from orders where id='{$order_number}';";
+        $sql = "insert into orders (order_number, customer_name, order_date) values '{$}';";
         $result = mysqli_query($conn, $sql);
       ?>
 </head>
