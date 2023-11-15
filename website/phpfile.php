@@ -6,8 +6,8 @@
    <body>
       <p>Your card type is: <?= htmlspecialchars($_POST["cctype"]); ?></p>
       <p>Your credit card number is: <?= htmlspecialchars($_POST["ccn"]); ?></p>
-      <p>Your name is: <?= htmlspecialchars($_POST["name"]); ?></p>
+      <p>Your name is: <?= htmlspecialchars($_POST["cardname"]); ?></p>
       <p>Your cvv code is: <?= htmlspecialchars($_POST["cvv"]); ?></p>
-      <p>Your country is: <?= htmlspecialchars($_POST["Countries"]); ?></p>
+      <p>Your country is: <?= htmlspecialchars($_POST["countries"]); ?></p>
    </body>
 </html>

