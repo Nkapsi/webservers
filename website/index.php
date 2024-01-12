@@ -32,6 +32,16 @@
              xhttp.open("GET", "ajaxtext.txt");
              xhttp.send();
          }
+         function ledchange()  {
+             const xhttp = new XMLHttpRequest();
+             xhttp.onload = function() {
+                 document.getElementById("ledchange").innerHTML =
+                 this.responseText;
+             }
+             xhttp.open("GET", "ledchange.php");
+             xhttp.send();
+         }
+
       </script>
       <center>
          <h1><font color="BLACK">HOMEPAGE</font></h1>
@@ -124,5 +134,23 @@
          </form>
          <br/>
       </div>
+      <br/> <br/>
+      <div>
+         <p>Lab 11 section:</p>
+         <button type="button" onclick="ledchange()">Click to toggle LED</button>
+         <br/>
+         <font color="red"><label for="onoff">Choose LED state:</label></font>   
+            <form action=ledtoggle.php method=get>
+               <select name="onoff" id="onoff" value="onoff">
+                  <option value="ON">ON</option>
+                  <option value="OFF">OFF</option>
+                  <input type="submit" value="Submit"/>
+               </select>
+            </form>
+      </div>
+            </br>
+         <form action=bme.php method=get>
+               <button type="submit" id=getstats value=getstats>Click to get BME stats</button>
+         </form> 
    </body>
 </html>
