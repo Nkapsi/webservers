@@ -1,3 +1,6 @@
+<!--Search response page-->
+<!--Nicholas K-->
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -13,11 +16,12 @@
         $conn = mysqli_connect($server, $username, $password, $database);
         $sql = "insert into IPtable (term, IP) values ('$term', '$IP')";
         $result = mysqli_query($conn, $sql);
-        ?>
+      ?>
    </head>
+   
    <body>
       <?php
         header('Location: https://google.ca/search?q=' .$term);
-        ?>
+      ?>
    </body>
 </html>
